@@ -6,7 +6,6 @@ public class GreatestCommonDivisor {
         if (a == 0) return b;
         if (b == 0) return a;
         if (a >= b) return euclidGCD(a % b, b);
-        if (a <= b) return euclidGCD(a, b % a);
-        else return 0;
+        else return euclidGCD(a, b % a);
     }
 }
