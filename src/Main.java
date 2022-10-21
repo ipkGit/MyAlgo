@@ -1,5 +1,4 @@
-
-
+import java.math.BigInteger;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +11,9 @@ public class Main {
 
         //testing to Euclid's algorithm to find GCD
         GreatestCommonDivisor gcd = new GreatestCommonDivisor();
-        System.out.println("GCD result = " + gcd.euclidGCD(3918848, 1653264)); //61232
+        System.out.println("GCD result = "
+                + gcd.euclidGCD(new BigInteger("1313131313131313554575"),
+                new BigInteger("75824582458545485485455455455"))); //5
 
     }
 }

@@ -1,11 +1,15 @@
-
+import java.math.BigInteger;
 
 public class GreatestCommonDivisor {
-    public int euclidGCD(int a, int b) {
+    public BigInteger euclidGCD(BigInteger a, BigInteger b) {
         //to find GCD 3918848 and 1653264 this method spend 5 iteration
-        if (a == 0) return b;
-        if (b == 0) return a;
-        if (a >= b) return euclidGCD(a % b, b);
-        else return euclidGCD(a, b % a);
+        while (true) {
+            if (a.equals(BigInteger.ZERO)) return b;
+            if (b.equals(BigInteger.ZERO)) return a;
+            if (a.compareTo(b)>0) a = a.mod(b);
+            else b = b.mod(a);
+        }
+
+        //or you can use already existing method in BigInteger class .gcd()
     }
 }
